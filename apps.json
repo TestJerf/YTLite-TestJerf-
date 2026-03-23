@@ -2,7 +2,7 @@
   "name": "Very Random Stuff",
   "identifier": "com.testjerf.RandomStuff",
   "subtitle": "YTLite und mehr",
-  "description": "A collection of modded IPAs",
+  "localizedDescription": "A collection of modded IPAs",
   "iconURL": "https://raw.githubusercontent.com/TestJerf/YTLite-TestJerf-/main/Resources/scr1.jpg",
   "apps": [
     {
