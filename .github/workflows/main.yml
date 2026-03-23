@@ -316,3 +316,25 @@ jobs:
       - name: Output Release URL
         run: |
           echo "::notice::Release available at: https://github.com/${{ github.repository }}/releases"
+
+      - name: Update apps.json with new Release
+        run: |
+          # 1. Version aus dem Release-Tag holen
+          VERSION="${{ github.ref_name }}"
+          # 2. Den direkten Download-Link generieren
+          # Ersetzt 'DEIN_IPA_NAME' durch den Namen, den deine Action ausgibt (z.B. YouTubePlus_5.2b4.ipa)
+          DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/YouTubePlus_5.2b4.ipa"
+          DATE=$(date +'%Y-%m-%d')
+
+          # 3. Die apps.json mit 'jq' (JSON-Tool) bearbeiten
+          # Wir updaten Version, Datum und die URL
+          jq ".apps[0].version = \"$VERSION\" | .apps[0].versionDate = \"$DATE\" | .apps[0].downloadURL = \"$DOWNLOAD_URL\"" apps.json > apps.tmp.json && mv apps.tmp.json apps.json
+
+      - name: Commit & Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add apps.json
+          git commit -m "chore: auto-update apps.json for release ${{ github.ref_name }}"
+          git push
+          echo "::notice::Please check Releases Page and Altstore/Sidesrttore Source. New Version should be avaliable now."
