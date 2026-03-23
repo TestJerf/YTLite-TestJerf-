@@ -1,0 +1,22 @@
+{
+  "name": "Very Random Stuff",
+  "identifier": "com.testjerf.RandomStuff",
+  "subtitle": "YTLite und mehr",
+  "description": "A collection of modded IPAs",
+  "iconURL": "https://raw.githubusercontent.com/TestJerf/YTLite-TestJerf-/main/Resources/scr1.jpg",
+  "apps": [
+    {
+      "name": "YTLite",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "YTLite / Edited by 〘VRD〙",
+      "subtitle": "Adblock, SponsorBlock and more!",
+      "description": "Decrypted IPA with YTLite Tweak. Tested on iPhone 13 Pro using Sidestore and Live Container. Known Bugs: none.",
+      "version": "21.08.3",
+      "versionDate": "2026-03-23",
+      "versionDescription": "First Release ever!!!",
+      "downloadURL": "https://github.com/TestJerf/YTLite-TestJerf-/releases/download/ytp-16/YouTubePlus_5.2b4.ipa",
+      "iconURL": "https://raw.githubusercontent.com/TestJerf/YTLite-TestJerf-/main/Resources/scr1.jpg",
+      "size": 120000000
+    }
+  ]
+}
